@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd ~/TCLB
+
+#./tools/install.sh --github --rpackage llaniewski/rtemplate
+#./tools/install.sh --github --rpackage llaniewski/gvector
+#./tools/install.sh --github --rpackage llaniewski/polyAlgebra
+
+
+export LDFLAGS="-L/usr/lib/x86_64-linux-gnu/hdf5/openmpi/  $LDFLAGS" 
+export CPPFLAGS="-I /usr/include/hdf5/openmpi $CPPFLAGS"
+
+make configure
+./configure --disable-cuda --with-python --with-python-config=python3.8-config --enable-double --enable-keepcode --enable-rinside --enable-cpp11
+
+make -j 8 d2q9_reaction_diffusion_system_SimpleDiffusion
