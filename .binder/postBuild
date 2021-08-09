@@ -13,4 +13,6 @@ export CPPFLAGS="-I /usr/include/hdf5/openmpi $CPPFLAGS"
 make configure
 ./configure --disable-cuda --with-python --with-python-config=python3.8-config --enable-double --enable-keepcode --enable-rinside --enable-cpp11
 
-make -j 8 d2q9_reaction_diffusion_system_SimpleDiffusion
+make -j 5 d2q9_reaction_diffusion_system_SimpleDiffusion
+
+make -j 5 d2q9
