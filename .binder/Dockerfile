@@ -42,5 +42,5 @@ USER root
 RUN chmod +x /start
 
 USER ${NB_USER}    
-RUN ${HOME}/binder/postBuild
+RUN /bin/bash ${HOME}/binder/postBuild
 ENTRYPOINT ["/bin/bash","/start"]
