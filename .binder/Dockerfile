@@ -28,6 +28,7 @@ RUN adduser --disabled-password \
 # Make sure the contents of our repo are in ${HOME}
 COPY --chown=${NB_UID} . ${HOME}
 COPY --chown=${NB_UID} .binder/start /start
+COPY --chown=${NB_UID} .binder/postBuild /postBuild
 
 
 
@@ -39,8 +40,8 @@ COPY --chown=${NB_UID} .binder/start /start
 #RUN chown  ${NB_UID} /start
 
 USER root
-RUN chmod +x /start
+RUN chmod +x /start && chmod +x /postBuild
 
 USER ${NB_USER}    
-RUN /bin/bash ${HOME}/binder/postBuild
+RUN /postBuild
 ENTRYPOINT ["/bin/bash","/start"]
