@@ -8,7 +8,7 @@ ENV HOME /home/${NB_USER}
 SHELL ["/bin/bash", "-c"]
 ENV SHELL "/bin/bash"
 
-RUN apt-get -y update && apt-get install -y  pip && apt-get clean
+RUN apt-get -y update && apt-get install -y  pip nodejs && apt-get clean
 RUN pip install --no-cache-dir numpy sympy pandas matplotlib h5py jupyterlab itkwidgets vtk lxml numba display_xml
 
 RUN apt-get install -y  curl && apt-get clean
