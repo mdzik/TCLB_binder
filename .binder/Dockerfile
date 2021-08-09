@@ -10,6 +10,10 @@ ENV SHELL "/bin/bash"
 
 RUN apt-get -y update && apt-get install -y  pip && apt-get clean
 RUN pip install --no-cache-dir numpy sympy pandas matplotlib h5py jupyterlab itkwidgets vtk lxml numba display_xml
+
+RUN apt-get install -y  curl && apt-get clean
+RUN curl -sL https://deb.nodesource.com/setup_12.x |  bash -
+
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-matplotlib jupyterlab-datawidgets 
 
 
