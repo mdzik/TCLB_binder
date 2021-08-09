@@ -32,7 +32,7 @@ COPY --chown=${NB_UID} .binder/postBuild /postBuild
 
 
 
-#RUN chown -R ${NB_UID} ${HOME}
+RUN chown -R ${NB_UID} ${HOME}
 
 #RUN cp ${HOME}/binder/start /start
 #RUN cp ${HOME}/binder/.bashrc ${HOME}/.bashrc
