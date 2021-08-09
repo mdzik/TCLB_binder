@@ -18,7 +18,7 @@ Image is designed to be binder-firendly. For local development, see TCLB_Docker 
  - d2q9_reaction_diffusion_system_SimpleDiffusion
  - d2q9
  - more comming
-
+3. Change ***tree*** to ***lab*** in url to get IDE like environment with Terminal access
 4. Libraries included
  - TCLB dependincies: R, Python, HDF5
  - Python VTK and HDF5 bindings
