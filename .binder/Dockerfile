@@ -40,7 +40,7 @@ COPY --chown=${NB_UID} .binder/postBuild /postBuild
 #RUN chown  ${NB_UID} /start
 
 USER root
-RUN chmod o+x /start && chmod o+x /postBuild
+RUN chmod u+x /start && chmod u+x /postBuild
 
 USER ${NB_USER}    
 RUN /postBuild
