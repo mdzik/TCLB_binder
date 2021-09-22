@@ -8,8 +8,7 @@ ENV HOME /home/${NB_USER}
 SHELL ["/bin/bash", "-c"]
 ENV SHELL "/bin/bash"
 
-
-RUN apt-get install -y  curl && apt-get clean
+RUN apt-get -y update && apt-get install -y  curl && apt-get clean
 RUN curl -sL https://deb.nodesource.com/setup_12.x |  bash -
 
 RUN apt-get -y update && apt-get install -y  pip nodejs && apt-get clean
