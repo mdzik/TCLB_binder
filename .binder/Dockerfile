@@ -1,4 +1,4 @@
-FROM mdzik/tclb_buildkit:latest
+FROM mdzik/tclb_workspace:latest
 
 ARG NB_USER=jovyan
 ARG NB_UID=1000
@@ -8,15 +8,15 @@ ENV HOME /home/${NB_USER}
 SHELL ["/bin/bash", "-c"]
 ENV SHELL "/bin/bash"
 
-RUN apt-get -y update && apt-get install -y  curl && apt-get clean
-RUN curl -sL https://deb.nodesource.com/setup_12.x |  bash -
+#RUN apt-get -y update && apt-get install -y  curl && apt-get clean
+#RUN curl -sL https://deb.nodesource.com/setup_12.x |  bash -
 
-RUN apt-get -y update && apt-get install -y  pip nodejs && apt-get clean
-RUN pip install --no-cache-dir numpy sympy pandas matplotlib h5py jupyterlab itkwidgets vtk lxml numba display_xml
+#RUN apt-get -y update && apt-get install -y  pip nodejs && apt-get clean
+#RUN pip install --no-cache-dir numpy sympy pandas matplotlib h5py jupyterlab itkwidgets vtk lxml numba display_xml
 
 
 
-RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-matplotlib jupyterlab-datawidgets 
+#RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-matplotlib jupyterlab-datawidgets 
 
 
 RUN adduser --disabled-password \
