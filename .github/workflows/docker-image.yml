@@ -2,10 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
-      - 'Dockerfile'
-      - '.binder/**'
+      - '**'
 jobs:
 
   build-binder-image:
