@@ -11,7 +11,7 @@ export LDFLAGS="-L/usr/lib/x86_64-linux-gnu/hdf5/openmpi/  $LDFLAGS"
 export CPPFLAGS="-I /usr/include/hdf5/openmpi $CPPFLAGS"
 
 make configure
-./configure --disable-cuda --with-python --with-python-config=python3.8-config --enable-double --enable-keepcode --enable-rinside --enable-cpp11
+./configure --disable-cuda --with-python --with-python-config=python3.8-config --enable-double --enable-keepcode --enable-rinside --enable-cpp11 --with-eigen=/opt/eigen-3.4.0
 
 make -j 4 d2q9_reaction_diffusion_system/all
 
