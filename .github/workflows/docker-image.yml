@@ -5,7 +5,8 @@ on:
     branches: [ main ]
     paths:
       - '**'
-  repository-dispatch:
+  repository_dispatch:
+    types: [update-on-upstream]
 jobs:
 
   build-binder-image:
